@@ -18,6 +18,8 @@ class TestPrimes(unittest.TestCase):
     def test_3(self):
         self.assertEquals((1, 3), generate_prime_factors(3))
 
+    def test_4(self):
+        self.assertEquals((1, 2), generate_prime_factors(4))
 
 if __name__ == '__main__':
     unittest.main()

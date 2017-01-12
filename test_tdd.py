@@ -45,6 +45,12 @@ class TestPrimes(unittest.TestCase):
     def test_49(self):
         self.assertEquals((7, 7), generate_prime_factors(49))
 
+    def test_45(self):
+        self.assertEquals((3, 3, 5), generate_prime_factors(3*3*5))
+
+    def test_9889(self):
+        self.assertEquals((11, 29, 31), generate_prime_factors(11*31*29))
+
 
 if __name__ == '__main__':
     unittest.main()

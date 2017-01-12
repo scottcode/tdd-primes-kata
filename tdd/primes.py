@@ -1,14 +1,14 @@
 def generate_prime_factors(n):
+    factors = []
     primes = []
-    while n % 2 == 0:
-        primes.append(2)
-        n /= 2
-    while n % 3 == 0:
-        primes.append(3)
-        n /= 3
-    while n % 5 == 0:
-        primes.append(5)
-        n /= 5
-    if n > 1:
-        primes.append(n)
-    return tuple(primes)
+    i = 2
+    while n != 1:
+        if any(i % p == 0 for p in primes):
+            i += 1
+            continue
+        primes.append(i)
+        while n % i == 0:
+            factors.append(i)
+            n /= i
+        i += 1
+    return tuple(factors)
